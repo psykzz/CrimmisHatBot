@@ -25,7 +25,7 @@ class Bot(commands.Bot):
 
 
 if __name__ == "__main__":
-    token = os.getenv("DISCORD_TOKEN") or 'MzA0Mzg4MjIyMTE1NjQzMzkz.GUL6GD.71DD38eFLiaZ1kONz16JYCu1B1bgDYgGj-HGOA'
+    token = os.getenv("DISCORD_TOKEN")
     if not token:
         raise Exception("Missing Discord token")
     client = Bot()
