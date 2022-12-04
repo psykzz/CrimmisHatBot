@@ -185,6 +185,12 @@ class Cog(commands.Cog):
             # Add current message to the users dictionary
             users[message.author.id] = iamge_message_id
 
+            # try to delete the original message if we have the permission
+            try:
+                await ctx.message.delete()
+            except discord.errors.Forbidden:
+                print("Could not delete message for {} - {}".format(message.author.name, message.author.name))
+
         except Exception as e:
             # Catching general exceptions to give to users, handles traceback print out still
             print(
